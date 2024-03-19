@@ -1,0 +1,61 @@
+Tun
+d           Line 2: dominant (d) or recessive (r) analysis
+2           Line 3: model 1 (affected only) or 2 (incomplete penetrance) or 3 (full penetrance)
+1 0         Line 4: Start and end line numbers of markers to process
+/home/jurg/
+/usr/local/bin/
+
+
+=== The program manual may be found at https://lab.rockefeller.edu/ott/programs/RunPM ===
+
+EXPLANATIONS
+Note: No text after first item in lines 1, 5, and 6!
+
+Line 1: Name of input file, without ".tfam" and ".tped"
+
+Line 2: Dominant (d) or recessive (r)
+
+Line 3: Model 1 (affected only) or 2 (incomplete penetrance)
+  or 3 (full penetrance). With model 3, a second number after
+  "3" is expected, which is the disease prevalence, for
+  example, 0.001. Occasionally, full penetrance leads to
+  mendel errors for the trait, in which case penetrances may
+  be specified as 0.0001 and 0.9999 rather than 0 and 1. If
+  this is desired, then the prevalence should be furnished as
+  a negative number, for example, -0.001. The program will
+  read this as a prevalence of 0.001 with penetrances of
+  0.0001 and 0.9999.
+
+Line 4: Start and end line numbers of markers to process.
+  For example, 200 3000 means that markers #200 - #3000 will
+  be processed. To run all markers, set these numbers equal 
+  to 1 0. You may want to initially specify a small number of
+  markers just to see whether the program works correctly.
+
+Line 5: A directory to which the program will print
+  a progress report for every 10 markers processed so that
+  you will see how many markers total have been analyzed.
+
+Line 6: A directory containing the executable programs:
+  pseudomarker, unknownpseudo, makepedpseudo, ilinkpseudo.
+  The reason for having these programs in a separate folder
+  is that multiple parallel runs may lead to conflicts when
+  more than one run attempts to access these programs. In
+  some installations, the programs must be in the path, for
+  example, in /usr/local/bin/.
+
+Line 7: The normal situation is that this line is blank. If
+  it contains the number 1 then a file with statistical de-
+  tails on program execution will be saved for each marker.
+  The file names will be PPPn.out, where n is the sequential
+  number of each marker. Each file will occupy 4 KB, so this
+  feature should not be used for too many markers.
+
+Suggested usage:
+runPM <runPM.param > /dev/null 2>&1 &
+disown
+
+With these two commands, the runPM program will run even
+after you log out. If you need to terminate it, run the "top"
+command and watch for runPM, then type kill n, where n is
+the process number listed for runPM in the "top" output.

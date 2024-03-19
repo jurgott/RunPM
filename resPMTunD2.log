@@ -1,0 +1,17 @@
+Program RunPM version 14 March 2024
+Copyright (C) 2016-2024 Jurg Ott  Rockefeller University New York
+Start: 17 Mar 2024 18h 51m  0sHostname: OldLinuxPC
+Input file: Tun.tped
+Analysis type is D2
+A marker with the following properties will be skipped:
+ Number of minor alleles in all families < 2
+ Total number of non-missing alleles < 4
+ 95 variants in input file, Tun.tped
+1 = first variant number to process
+95 = last variant number to process
+No details to be written
+resPMTunD2.out written
+First marker number processed = 1
+ Last marker number processed = 95
+ 82 markers (lod results) written
+Stop: 17 Mar 2024 18h 52m  2s
